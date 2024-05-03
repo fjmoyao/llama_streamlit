@@ -1,8 +1,7 @@
 # Llama 3 Streamlit App
 
-<a href="https://llama3demo.streamlit.app/" target="_blank">
-    <img src="[https://yourdomain.com/path/to/button-image.png](https://static.vecteezy.com/system/resources/thumbnails/002/589/005/small/cute-llama-wild-animal-line-style-icon-free-vector.jpg)" alt="Open in Streamlit">
-</a>
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://llama3demo.streamlit.app/)
+
 ![Inference Example](images/Llama3_chatbot_demo2.gif)
 
 Welcome to the Llama 3 Streamlit App, your gateway to one of the most powerful large language models (LLMs) available today—Llama3! Whether you're looking to harness the mighty 70b model or prefer the swiftness of the 8b version, our app has you covered. Powered by the lightning-fast Groq API, this interface isn't just quick—it's instantaneous. Don't take our word for it; try it out and see how it stacks up against ChatGPT!
