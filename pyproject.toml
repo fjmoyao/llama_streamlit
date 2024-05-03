@@ -1,0 +1,18 @@
+[project]
+name = "llama_streamlit"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "Francisco", email = ""},
+]
+dependencies = [
+    "streamlit>=1.34.0",
+    "groq>=0.5.0",
+]
+requires-python = "==3.12.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
