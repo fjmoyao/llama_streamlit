@@ -1,6 +1,7 @@
 import streamlit as st
 from typing import Generator
 from groq import Groq
+import utils_app
 
 st.set_page_config(page_icon=":llama:", layout="wide",
                    page_title="Llamma 3 demo")
@@ -100,3 +101,22 @@ if prompt := st.chat_input("Enter your prompt here..."):
         combined_response = "\n".join(str(item) for item in full_response)
         st.session_state.messages.append(
             {"role": "assistant", "content": combined_response})
+        
+if len(st.session_state.messages):
+    mens= st.session_state.messages[-2]["content"]
+    output = utils_app.query({"inputs": mens,})
+    result = utils_app.get_label_score(output)
+    res = list(result)[0]
+    warn_message = """
+                    Hello! I hope you're doing okay. I've noticed some signs of stress in our conversation — it's completely okay to feel this way. 
+                    If you're feeling overwhelmed, please remember to take care of yourself. Help is available if you need it, and you're not alone. 
+                    You can reach out to someone at these numbers: XXXXX. Also, if you're curious about how I can detect signs of stress, feel free to explore our methods here:
+                    https://github.com/fjmoyao/depression_detection. Your well-being matters to us!
+                    """
+    warn_message_esp = """
+                        ¡Hola! Espero que te encuentres bien. He notado algunos signos de estrés en nuestra conversación — es completamente normal sentirse así. 
+                        Si te sientes abrumado, por favor recuerda cuidarte. Hay ayuda disponible si la necesitas y no estás solo. Puedes comunicarte con alguien en estos números: XXXXX. 
+                        Además, si tienes curiosidad sobre cómo puedo detectar signos de estrés, no dudes en explorar nuestros métodos aquí:
+                        https://github.com/fjmoyao/depression_detection. ¡Tu bienestar es importante para nosotros!"""
+    if res== "1":
+        st.warning(warn_message_esp)
